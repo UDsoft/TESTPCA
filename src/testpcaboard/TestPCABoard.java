@@ -33,7 +33,7 @@ public class TestPCABoard {
         // 4096 Steps (12 Bit) 
         // T = 4096 * 0.000005s = 0.02048s 
         // f = 1 / T = 48.828125 
-        BigDecimal frequency = new BigDecimal("48.828"); 
+        BigDecimal frequency = new BigDecimal("60"); 
         // Correction factor: actualFreq / targetFreq 
         // e.g. measured actual frequency is: 51.69 Hz 
         // Calculate correction factor: 51.65 / 48.828 = 1.0578 
@@ -57,8 +57,8 @@ public class TestPCABoard {
         gpioProvider.setAlwaysOff(PCA9685Pin.PWM_11); 
         // Set 0.9ms pulse (R/C Servo minimum position)  
         for(int x = 0 ; x <= 20379;x++){
-            gpioProvider.setPwm(PCA9685Pin.PWM_00 , 100+x); 
-            System.out.println(x);
+            gpioProvider.setPwm(PCA9685Pin.PWM_00 , 16000+x); 
+            System.out.println(16000+x);
             Thread.sleep(100);
         }
         
