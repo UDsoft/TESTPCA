@@ -56,7 +56,7 @@ public class TestPCABoard {
         // Set full OFF 
         gpioProvider.setAlwaysOff(PCA9685Pin.PWM_11); 
         // Set 0.9ms pulse (R/C Servo minimum position)  
-        for(int x = 0 ; x <= 20480;x++){
+        for(int x = 0 ; x <= 20379;x++){
             gpioProvider.setPwm(PCA9685Pin.PWM_00 , 100+x); 
             System.out.println(x);
             Thread.sleep(100);
